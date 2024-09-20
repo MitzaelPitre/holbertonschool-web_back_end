@@ -11,7 +11,7 @@ app.on('request', (_, res) => {
   res.setHeader('Content-Length', responseText.length);
   res.statusCode = 200;
   res.write(responseText);
-  res.end();  // Cerrar la respuesta
+  res.end(); // Cerrar la respuesta
 });
 
 app.listen(PORT, HOST, () => {
