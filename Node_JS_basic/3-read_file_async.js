@@ -11,7 +11,7 @@ const countStudents = (dataPath) => new Promise((resolve, reject) => {
         .toString('utf-8')
         .trim()
         .split('\n')
-        .filter((line) => line.trim() !== '');  // Ignorar líneas vacías
+        .filter((line) => line.trim() !== ''); // Ignorar líneas vacías
 
       const studentGroups = {};
       const dbFieldNames = fileLines[0].split(',');
