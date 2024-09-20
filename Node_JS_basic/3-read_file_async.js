@@ -11,7 +11,7 @@ const countStudents = (dataPath) => new Promise((resolve, reject) => {
         .toString('utf-8')
         .trim()
         .split('\n')
-        .filter((line) => line.trim() !== ''); // Ignorar líneas vacías
+        .filter((line) => line.trim() !== '');
 
       const studentGroups = {};
       const dbFieldNames = fileLines[0].split(',');
@@ -32,7 +32,7 @@ const countStudents = (dataPath) => new Promise((resolve, reject) => {
       }
 
       const totalStudents = Object.values(studentGroups)
-        .reduce((pre, cur) => pre + cur.length, 0);  // Cálculo corregido
+        .reduce((pre, cur) => pre + cur.length, 0);
 
       console.log(`Number of students: ${totalStudents}`);
 
@@ -41,8 +41,9 @@ const countStudents = (dataPath) => new Promise((resolve, reject) => {
         console.log(`Number of students in ${field}: ${group.length}. List: ${studentNames}`);
       }
 
-      resolve(true);
+      return resolve(true); // Asegúrate de que esté aquí
     }
+    return reject(new Error('No data found')); // Asegúrate de tener un return
   });
 });
 

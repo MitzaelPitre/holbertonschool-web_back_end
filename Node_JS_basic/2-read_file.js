@@ -13,7 +13,7 @@ const countStudents = (dataPath) => {
     .toString('utf-8')
     .trim()
     .split('\n')
-    .filter((line) => line.trim() !== '');  // Ignorar líneas vacías
+    .filter((line) => line.trim() !== ''); // Ignorar líneas vacías
 
   const studentGroups = {};
   const dbFieldNames = fileLines[0].split(',');
@@ -34,7 +34,7 @@ const countStudents = (dataPath) => {
   }
 
   const totalStudents = Object.values(studentGroups)
-    .reduce((pre, cur) => pre + cur.length, 0);  // Arreglar cálculo total
+    .reduce((pre, cur) => pre + cur.length, 0); // Arreglar cálculo total
 
   console.log(`Number of students: ${totalStudents}`);
 
